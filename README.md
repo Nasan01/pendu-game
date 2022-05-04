@@ -26,8 +26,7 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Demo
 
-```sh
-npm run build
-```
+
+[view demo](https://nasan01.github.io/pendu-game/)
