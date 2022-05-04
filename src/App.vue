@@ -1,7 +1,7 @@
 <script>
 
 import Todo from './components/Todo.vue'
-import Pendu from './components/Pendu.vue'
+import Pendu from './components/pendu/Pendu.vue'
 
 export default {
   data() {
