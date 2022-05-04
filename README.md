@@ -1,16 +1,20 @@
-# fram_base-vue
+# Pendu - Games
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
+
+first clone this repo
+
+```sh
+git clone https://github.com/Nasan01/pendu-game.git
+```
+
+then
+
+```sh
+cd pendu-game
+```
+and Install it's dependencies
 
 ```sh
 npm install
