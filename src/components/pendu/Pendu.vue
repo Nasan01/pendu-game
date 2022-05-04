@@ -12,7 +12,7 @@ export default {
 
   data() {
     return {
-      words: ["voiture", "vie", "table", "gouvernement", "ordinateur"],
+      words: ["voiture", "vie", "table", "gouvernement", "ordinateur", "tornade", "python", "cochon", "bidon", "coq", "poule", "voyage", "site", "web", "application", "camion", "moto", "rire", "riz"],
       word: "",
       letter: "",
       found: new Set(),
@@ -24,6 +24,7 @@ export default {
 
   methods: {
     handleSubmit() {
+      this.letter = this.letter.toLowerCase()
       this.play(this.letter)
       this.letter = ""
       this.calculScore()
@@ -34,7 +35,7 @@ export default {
       } else {
         this.attempt -= 1
         if(this.attempt <= 0)
-          alert("Oupss! Game Over!")
+          alert(`Oupss! Game Over! the word is ${this.word}`)
       }
     },
     setWord() {
@@ -109,22 +110,22 @@ export default {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 h-screen bg-gray-400">
+  <div class="sm:flex sm:flex-col md:grid md:grid-cols-3 md:h-screen bg-gray-400 pt-2">
     <div class="col-span-2 flex flex-col items-center justify-center" style="height: 80vh" v-if="isGameEnd">
       <div v-if="isWinner">
-        <h1 class="text-8xl" :class="{'text-green-600': isWinner}">YOU WIN !!!!</h1>
+        <h1 class="sm:text-2xl md:text-8xl" :class="{'text-green-600': isWinner}">YOU WIN !!!!</h1>
       </div>
       <div v-else>
-        <h1 class="text-8xl" :class="{'text-red-600': !isWinner}">GAME OVER !!</h1>
+        <h1 class="sm:text-2xl md:text-8xl" :class="{'text-red-600': !isWinner}">GAME OVER !!</h1>
       </div>
       <p class="text-lg text-gray-600"><i>Thanks for playing !!!</i></p>
       <div class="text-right my-6">
         <button class="px-4 py-4 bg-gray-200 rounded-lg text-gray-400" @click="playAgain">Play Again !</button>
       </div>
     </div>
-    <div class="col-span-2 flex flex-col items-center p-5 shadow-xl bg-slate-300 shadow-slate-800 m-2 rounded-md" v-else>
-      <h1 class="text-4xl text-gray-700">Pendu-Game</h1>
-      <div class="w-full text-7xl text-center text-slate-700 md:m-32">
+    <div class="col-span-2 flex flex-col items-center p-5 shadow-xl bg-slate-300 shadow-slate-800 mx-2 rounded-md" v-else>
+      <h1 class="sm:text-md md:text-4xl text-gray-700">Pendu-Game</h1>
+      <div class="w-full sm:text-md md:text-7xl text-center text-slate-700 md:m-32">
         {{ wordCached }}
       </div>
       <div>
@@ -133,7 +134,7 @@ export default {
             <input 
               type="text" 
               name="letter" 
-              class="text-slate-300 bg-gray-400 text-center outline-none text-xl py-4" 
+              class="text-slate-300 bg-gray-400 text-center outline-none sm:text-md md:text-xl py-4" 
               v-model="letter" 
               :readonly="isReadOnly"
             />
@@ -144,13 +145,19 @@ export default {
         </form>
       </div>
     </div>
-    <div class="col-span-1 border-l-2 border-gray-600">
-      <div class="flex flex-row justify-between py-16 px-2 text-4xl text-gray-800 bg-slate-300 rounded-md m-2 shadow-xl shadow-slate-800">
-        <h3>Attempt : <span>{{ attempt }}</span></h3>
-        <h3>Score : <span>{{ score }}</span></h3>
+    <div class="md:col-span-1 border-l-2 border-gray-600">
+      <div class="flex flex-row justify-between py-16 px-2 sm:text-md md:text-2xl text-gray-800 bg-slate-300 rounded-md m-2 shadow-xl shadow-slate-800">
+        <h3 class="md:m-1">Attempt : <span>{{ attempt }}</span></h3>
+        <h3 class="md:m-1">Score : <span>{{ score }}</span></h3>
       </div>
 
       <ScoreLog :scores="scoreLog" />
     </div>
+  </div>
+  <div class="h-16 bg-gray-400 text-slate-300 text-center text-xl text-clip">
+    <p>RAMAROSON Avonasandratra Faustin</p>
+    <ul>
+      <li>email : avonasandratra2003@gmail.com</li>
+    </ul>
   </div>
 </template>
